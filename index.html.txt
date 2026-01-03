@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Vision Store | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1b0033, #3a0066);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .login-box {
+      background: #0f001f;
+      padding: 30px;
+      width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(138, 43, 226, 0.6);
+    }
+
+    .login-box h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #b366ff;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background: #8a2be2;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background: #a855f7;
+    }
+
+    .error {
+      color: #ff4d4d;
+      text-align: center;
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h1>Vision Store</h1>
+    <input type="text" id="user" placeholder="Usuário">
+    <input type="password" id="pass" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+    <div class="error" id="error">Usuário ou senha incorretos</div>
+  </div>
+
+  <script>
+    // LOGIN SIMPLES (APENAS EXEMPLO)
+    const USER = "admin";
+    const PASS = "1234";
+
+    function login() {
+      const u = document.getElementById("user").value;
+      const p = document.getElementById("pass").value;
+
+      if (u === USER && p === PASS) {
+        localStorage.setItem("logado", "true");
+        window.location.href = "painel.html";
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

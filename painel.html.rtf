@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Vision Store | Painel</title>
+  <style>
+    body {
+      background: #0f001f;
+      color: white;
+      font-family: Arial;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Bem-vindo à Vision Store 🔥</h1>
+<p>Produtos disponíveis:</p>
+
+<ul>
+  <li>🎮 Roblox Up</li>
+  <li>🤖 Bots Discord</li>
+  <li>🛒 Servidores Prontos</li>
+</ul>
+
+<script>
+  if (localStorage.getItem("logado") !== "true") {
+    window.location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>
